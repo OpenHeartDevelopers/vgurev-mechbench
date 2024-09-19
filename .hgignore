@@ -1,0 +1,9 @@
+syntax: glob
+*~
+*.backup
+*.log
+*.out
+*.aux
+problem 4/*
+tools/meshgen/out/*
+tools/meshgen/benchmark_ellipse_cubic_ra.m

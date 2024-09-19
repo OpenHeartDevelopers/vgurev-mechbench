@@ -1,0 +1,12 @@
+For each solution provided, please use the following strucutre:
+
+A folder 'Name of the code', containing
+1. The attached text file 'info.txt' with the information filled in.
+2. For each solution provided, a folder named after the number of degrees of freedom of that solution.
+2a. A file undeformed.vtk containing the undeformed mesh
+2b. A file deformed.vtk containing the deformed mesh, with identical topology to undeformed.vtk. OPTIONAL: Include a node or element based strain field (E)
+
+Please note the 'number of degrees of freedom' is that used in your code to calculate the solution, even though this may be different from the vtk file. 
+Furthermore, the vtk files should be text-based rather than binary.
+
+

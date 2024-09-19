@@ -1,0 +1,130 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,subfigure,amsmath,xcolor,comment,url,fullpage}
+\usepackage{fullpage}
+
+
+\newcommand{\todo}[1]{{\color{red}(TODO: #1)}}
+\newcommand{\degrees}{^\circ}
+\newcommand{\mm}{\,\text{mm}}
+
+\title{Cardiac Mechanics Benchmark: Problem Definitions}
+\author{Sander Land}
+
+\begin{document}
+
+\maketitle
+
+\appendix
+
+\noindent This document is a work in progress, but feel free to forward it to collaborators.
+For an up-to-date version, questions about joining the cardiac mechanics benchmark please contact \url{sander.land@kcl.ac.uk}.
+
+\section{General}
+
+All problems use the constitutive law by Guccione et al. \cite{guccione_finite_1995}, with strain energy function:
+\begin{align}
+W   =& \frac{C}{2} (e^Q - 1)  \\
+Q   =&     b_f E_{11}^2 + b_t (E_{22}^2 + E_{33}^2 + E_{23}^2+ E_{32}^2) + b_{fs} (E_{12}^2 + E_{21}^2 + E_{13}^2 + E_{31}^2)
+\end{align}
+
+Where $\mathbf{E}$ is the Green strain in a local coordinate system with fibers in the $e_1$ direction.\\
+
+In all problems the material is fully incompressible, i.e. the Jacobian $J=1$.
+However, no restrictions are implied with respect to the methods used to satisfy incompressibility. %, Lagrange multipliers, penalty functions.
+Likewise, participants are free to use any computational method, or type of elements in case of finite element methods.\\
+
+Please note that in all problems the direction of the pressure boundary condition scales with the deformed normal, and its magnitude with deformed area.\\
+
+The three problems are described below in increasing order of complexity. Solving all three is encouraged, but not required for participation in the benchmark.
+
+\section{Problem 1 : Deformation of a bar}
+
+\textbf{Geometry:} 
+ The undeformed geometry is the region $x \in [0,10]\mm$, $y \in [0,1]\mm$, $z \in [0,1]\mm$.\\
+%\textbf{Constitutive parameters:} transversely isotropic as in (Guccione et al. 1995) :  $C = 0.876~\text{kPa}, b_f  = 18.48, b_t  = 3.58, b_{fs} = 1.627$ \\
+\textbf{Constitutive parameters:} Transversely isotropic, $C=2~\text{kPa}, b_f=8, b_t=2, b_{fs}=4$.\\
+\textbf{Fiber direction:} Constant along the long axis, i.e. $(1,0,0)$.\\
+\textbf{Dirichlet boundary conditions:}
+ The left face ($x=0$) is fixed in all directions.\\
+\textbf{Pressure boundary conditions:}
+ A pressure of $0.004$ kPa is applied to the bottom face ($z=0$).
+ 
+ 
+\section{Problem 2 : Inflation of a ventricle}
+
+\textbf{Geometry:} 
+ The undeformed geometry is defined using the parametrization for a truncated ellipsoid:\\
+\begin{equation}
+\mathbf{x} = 
+ \left( \begin{array}{c} x\\y\\z \end{array}\right) =
+  \left(\begin{array}{c}
+   r_s \sin u \cos v    \\ 
+   r_s \sin u \sin v  \\  
+   r_l \cos u   
+   \end{array}\right) 
+\label{eqn:ellipsoid}
+\end{equation}
+
+The undeformed geometry is defined by the volume between:
+\begin{itemize}
+ \item The \emph{endocardial surface} $r_s=7 \mm, r_l=17\mm, u \in [-\pi, -\arccos \frac{5}{17}], v\in[-\pi,\pi]$, 
+ \item The \emph{epicardial surface} $r_s=10 \mm, r_l=20\mm, u \in [-\pi, -\arccos \frac{5}{20}], v\in[-\pi,\pi]$
+ \item The \emph{base plane} $z=5\mm$ which is implicitly defined by the ranges for $u$.
+\end{itemize}
+\textbf{Constitutive parameters:} Isotropic, $C=10 \text{ kPa}, b_f=b_t=b_{fs}=1$.\\
+\textbf{Dirichlet boundary conditions:}
+ The base plane($z=5\mm$) is fixed in all directions.\\
+\textbf{Pressure boundary conditions:}
+ A pressure of 10 kPa is applied to the endocardium.
+
+\section{Problem 3 : Active contraction of a ventricle}
+
+\textbf{Geometry, Dirichlet boundary conditions:} 
+  Identical to problem 2.\\
+\textbf{Fiber definition:} 
+  Fiber angles range from $-90\degrees$ at the epicardial surface to $+90\degrees$ at the endocardial surface.
+  They are defined using the direction of the derivatives of the parametrization of the ellipsoid in Equation \ref{eqn:ellipsoid}:
+\begin{equation}
+ f(u,v) =
+   n\!\left( \frac{ \text{d}\mathbf{x} }{ \text{d}u } \right) \sin \alpha + 
+   n\!\left(\frac{ \text{d}\mathbf{x} }{ \text{d}v } \right)\cos \alpha = 
+\text{ where } n(\mathbf{v}) = \mathbf{v}/\|\mathbf{v}\|
+\end{equation}
+
+\begin{align}
+\frac{ \text{d}\mathbf{x} }{ \text{d}u } =& \left(\begin{array}{c} r_s \cos u \cos v \\ r_s \cos u \sin v \\  -r_l \sin u \end{array}\right)  \\
+\frac{ \text{d}\mathbf{x} }{ \text{d}v } =& \left(\begin{array}{c} -r_s \sin u \sin v \\ r_s \sin u \cos v \\ 0  \end{array}\right)  \\
+r_s    =&  7 + 3t\\
+r_l    =& 17 + 3t\\
+\alpha =& 90 - 180t
+\end{align}
+
+Where $r_s$, $r_l$ and $\alpha$ are derived from the transmural distance $t \in [0,1]$ which varies linearly from $0$ on the endocardium and $1$ on the epicardium.
+The apex ($u=-\pi$) has a fiber singularity which should not affect the converged solution. Participants are free to handle this in whatever way they choose.
+MATLAB scripts implementing this parametrization to generate a regular hexahedral mesh with cubic or linear elements are available in the shared repository.\\
+\textbf{Constitutive parameters:} Transversely isotropic, $C=2 \text{kPa}, b_f=8, b_t=2, b_{fs}=4$.\\
+\textbf{Active contraction:} 
+  The active stress is given by a constant, homogeneous, second Piola-Kirchhoff stress in the fiber direction of 60 kPa, i.e.
+\[
+ T = \text{passive stress} + T_a f f^T
+\]
+Where $T_a=60$ kPa and $f$ is the unit column vector in the fiber direction described above.\\
+\textbf{Pressure boundary conditions:}
+ A constant pressure of 15 kPa is applied to the endocardium.
+
+As this is a quasi-static problem, participants are free to add active stress first, add pressure first, or increment both simultaneously in finding a solution.
+ 
+\begin{thebibliography}{99}
+
+\bibitem{guccione_finite_1995}
+  JM Guccione, KD Costa, AD McCulloch.
+  \emph{Finite element stress analysis of left ventricular mechanics in the beating dog heart}.
+  Journal of Biomechanics 28(10), 1167--1177, 1995
+
+  
+\end{thebibliography}
+
+
+\end{document}
+

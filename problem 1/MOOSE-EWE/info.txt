@@ -1,0 +1,16 @@
+Author(s)	: Marco Favino, Rolf Krause, Daniel Ruprecht
+Affiliation	: Institute of Computational Science (Uniersita' della Svizera italiana)
+
+Name of the code		  : EWE (app of the FE framework MOOSE)
+Code availability/license	  : EWE is at the moment an internal software of ICS
+
+DOI of references related to the software (2 max) :
+doi:10.1016/j.nucengdes.2009.05.021
+
+
+Numerical methods (FE, basis type,incompressibility type) : 
+
+Taylor-Hood P2-P1
+Lagrangian
+Saddle-point (Lagrange multiplier), energy depending on Cbar
+

@@ -1,0 +1,21 @@
+This is the repository for the cardiac mechanics benchmark
+----------------------------------------------------------
+Index of files:
+
+description/             contains a .pdf with the problem descriptions
+description/problem 1  : boundary.vtk  and  geometry.vtk give a geometry for problem 1 with an indication of the boundary conditions.
+
+problem 1/   }
+problem 2/   }  contains participants meshes, solutions
+problem 3/   }
+
+tools/        
+tools/meshgen/   contains tools for mesh generation: linear and cubic lagrange meshes for cases 2 and 3
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+Author(s)	: Zhinuo Jenny Wang
+Affiliation	: Auckland Bioengineering Institute
+
+Name of the code		  : OpenCMISS
+Code availability/license	  : Open-source
+DOI of references related to the software (2 max) : 
+10.1016/j.pbiomolbio.2011.06.015
+
+Numerical methods (FE, basis type,incompressibility type) : 
+- Trilinear hexahedral finite elements for geometry. Constant element-based pressure, Lagrange multiplier. 
+
+- The degrees of freedom (DOF) include the displacement field and the hydrostatic pressure field, and include fixed/dirichlet DOFs. 
+
+Meshes in order are:
+transmural x circumferential x longitudinal
+8x32x32
+

@@ -1,0 +1,12 @@
+2 022 243 DOF: P1/P0 linear tetraderal elements,
+- quasi-incompressible with penalty kappa
+- isochoric/deviatoric splitting of the deformation gradient
+- element-wise static condensation of pressure (->P0)
+
+
+Augustin CM, Neic A, Liebmann M, Prassl AJ, Niederer SA, Haase G, Plank G (2015)
+"Anatomically accurate high resolution modeling of human whole heart
+electromechanics: A strongly scalable algebraic multigrid solver
+method for nonlinear deformation"
+Journal of Computational Physics
+under revision

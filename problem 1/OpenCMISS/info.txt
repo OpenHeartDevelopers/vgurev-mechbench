@@ -1,0 +1,18 @@
+Author(s)	: Zhinuo Jenny Wang
+Affiliation	: Auckland Bioengineering Institute
+
+Name of the code		  : OpenCMISS
+Code availability/license	  : Open-source
+DOI of references related to the software (2 max) : 
+10.1016/j.pbiomolbio.2011.06.015
+
+Numerical methods (FE, basis type,incompressibility type) : 
+- Tricubic Hermite hexahedral finite elements for deformation, linear elements for pressure, Lagrange multiplier. 
+
+- The degrees of freedom (DOF) include the displacement field and the hydrostatic pressure field, and include fixed/dirichlet DOFs. 
+
+- Smaller elements at the fixed end to get more accurate solutions. 
+
+Meshes in order are
+7x6x6
+

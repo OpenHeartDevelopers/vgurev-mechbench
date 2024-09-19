@@ -1,0 +1,15 @@
+Author(s)	: Hao Gao (1), Xiaoyu Luo (1), Boyce Griffith (2) 
+Affiliation	: (1) University of Glasgow; (2) University of North Carolina at Chapel Hill
+
+
+Name of the code		  : GlasgowHeart-IBFE
+Code availability/license	  : In-house application code/close, IBAMR/BSD License 
+DOI of references related to the software (2 max) : 
+(1) 10.1002/cnm.2652; 
+(2) [no DOI] B. E. Griffith and X. Y. Luo. Hybrid finite difference/finite element version of the immersed boundary method. Submitted.
+
+Numerical methods (Immersed Boundary Method with finite element discretization for the structure, incompressible material) 
+- mesh is the same as in Problem 2, linear hex element
+- fluid box: 4x4x6 cm,  discretized with 64x64x64 Eulerian grids
+- solver: IBAMR
+

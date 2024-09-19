@@ -1,0 +1,85 @@
+
+
+* Sander
+
+N x 8 x 8 elements, with N transmural. 
+
+1. Fully incompressible
+ N	vol (mm3)	endo (mm)	epi (mm)	
+ 2	11066		-2.658780e+01   -2.825532e+01 
+ 4	11065           -2.658654e+01   -2.825434e+01 
+ 8	11065           -2.658639e+01   -2.825424e+01 
+
+2. Fully incompressible with isochoric/deviatoric split
+ N	vol (mm3)	endo (mm)	epi (mm)	
+ 2	11102		-2.663172e+01   -2.829717e+01 
+ 4	11071           -2.660676e+01   -2.828291e+01 
+ 8	11067           -2.660233e+01   -2.828049e+01 
+
+3. Fully incompressible with isochoric/deviatoric split and additional compressibility penalty
+ N	vol (mm3)	endo (mm)	epi (mm)	
+ 2	11102	        -2.664004e+01 	-2.830127e+01 
+ 4	11071	        -2.661429e+01   -2.828569e+01 
+ 8	11067	        -2.660975e+01   -2.828319e+01 
+
+
+
+
+* Slava
+
+endo (mm)	epi (mm)	
+-26.608         -28.2766
+
+Methods. Fully incompressible, quadratic displacement, linear pressure hexahedral and triangular prism finite elements.
+
+Visualization. Cardioid uses hex-dominant meshes with nodes on edges, faces and interior of the finite elements to interpolate quadratic displacement field. However, all non-vertex nodes are dropped in output vtk files, and deformations are presented using linear elements.  
+Strain is computed at the center of each finite element (average coordinate of the vertex node). Scalar fields Exx, Eyy, Ezz, … in vtk files are components of Green-Lagrangian strain tensor mapped on deformed geometry. 
+
+
+* Simula
+
+Note: 5mm difference due to coordinate system.
+
+1. Fully incompressible, Quadratic displacement, Linear pressure, tetrahedral FE
+
+  N      vol (mm3)       endo (mm)        epi (mm)
+  1  10866.6368513  -31.7513665121  -33.0780303153
+  2  10756.9654888  -31.6664055878  -33.2899278782
+  4  10740.6728946  -31.6266414891  -33.2807951418
+  8  10735.152235   -31.6125974467  -33.2787076368
+ 16  10734.1944902  -31.6119859697  -33.2785377071
+ 32  10734.2746579  -31.6115828412  -33.2789491862
+ 64  10734.3559643  -31.6116162159  -33.279034966
+
+
+2. Nearly incompressible, quadratic elements, C_compr=1000 kPa penalty
+
+DOFs  vol (mm3)  endo (mm)   epi (mm)
+1405  10599.6    -32.2407    -33.2499
+9945  10619.1    -32.2023    -33.1977   
+
+
+* John Hopkins
+
+Epi   -28.3311
+Endo  -26.6186
+
+
+* Glasgow
+Fully incompressible. Hex-dominant mesh with prism elements for most apical region. 
+
+epi apical position  (0, 0, -28.6088) mm
+endo apical position (0, 0, -26.8056) mm
+
+LV cavity volume:     10795 mm^3
+
+
+
+
+
+
+
+
+
+
+

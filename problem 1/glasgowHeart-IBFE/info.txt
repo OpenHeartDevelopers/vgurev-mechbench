@@ -1,0 +1,20 @@
+Author(s)	: Hao Gao, Xiaoyu Luo
+Affiliation	: University of Glasgow
+
+Name of the code		  : GlasgowHeart-IBFE
+Code availability/license	  : In-house application code/close, IBAMR/BSD License 
+DOI of references related to the software (2 max) : 
+(1) 10.1002/cnm.2652; 
+(2) [no DOI] B. E. Griffith and X. Y. Luo. Hybrid finite difference/finite element version of the immersed boundary method. Submitted.
+
+Numerical methods: incompressible material, with updated material parameters after the first draft
+- implemented with IB/FE method (immersed boundary method with finite element discretization for structure). 
+- using dynamic simulation to approximate the steady state problem. The loading and boundary conditions are maintained until reaching steady state. 
+- The beam is meshed with linear hex element, total number is 40x4x4, and immersed in a 20x7x15 mm fluid box.
+- nodal displacements and Cauchy strain fileds are reported
+
+test cases, the sturctural mesh is the same
+test 1: the fluid box is discretized with 100x35x75
+test 2: the fluid box is discretized with 120x42x90 
+
+

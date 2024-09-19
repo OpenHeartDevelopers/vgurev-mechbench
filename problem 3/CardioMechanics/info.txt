@@ -1,0 +1,13 @@
+Author(s)	: Thomas Fritz, Lukas Baron
+Affiliation	: Karlsruhe Institute of Technology, Institute for Biomedical Engineering
+
+Name of the code		  : CardioMechanics
+Code availability/license	  : n/a
+DOI of references related to the software (2 max) : 10.1007/s10237-013-0523-y
+
+Numerical methods (FE, basis type,incompressibility type) :
+
+quadratic tetrahedra elements, quasi incompressibility using a penalty term of 1e6
+
+
+

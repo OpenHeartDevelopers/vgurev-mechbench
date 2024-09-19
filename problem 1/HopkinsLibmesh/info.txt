@@ -1,0 +1,23 @@
+Author(s)	: Dafang Wang
+Affiliation	: John Hopkins University
+
+Name of the code		  : HopkinsLibmesh
+Code availability/license	  : In-house/closed
+DOI of references related to the software (2 max) : n/a
+
+Numerical methods (FE, basis type,incompressibility type) : 
+
+A Q1P0 scheme was used.
+The incompressibility was carried out using the Lagrange Multipiler approach described by Bonet's nonlinear mechanics book. 
+
+When visualizing in Paraview, the following fields are available:
+    u: displacement
+    J: the element jacobian.
+    p: the hydrostatic pressure (the lagrange multiplier term).
+    E_f: the Euler Strain, in the local fiber coordinate system.
+    T_active/passive: the active/passive stress tensor, in the local fiber coordinate system.
+
+The degrees of freedom (DOF) include the displacement field and the hydrostatic pressure field. 
+Given the Q1P0 scheme, the total DOF_number = node_number *3 + elements_number 
+
+

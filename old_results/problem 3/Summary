@@ -1,0 +1,73 @@
+
+
+* Sander
+
+N x 8 x 8 elements, with N transmural. 
+
+1. Fully incompressible, Fiber XYZ input
+ N	vol (mm3)	endo (mm)	epi (mm)	
+ 2	1807           -1.180485e+01    -1.526479e+01 
+ 8	1812           -1.180022e+01    -1.522250e+01    Note: apex slighly 'pinched' inward at endo
+
+1f. Fully incompressible, Fiber angle input
+ N	vol (mm3)	endo (mm)	epi (mm)	
+ 2	1796           -1.222928e+01    -1.600371e+01 
+ 8	1791           -1.244364e+01    -1.591716e+01    Note: apex 'pinched' outward at endo.
+
+2. Fully incompressible with isochoric/deviatoric split, Fiber XYZ input
+ N	vol (mm3)	endo (mm)	epi (mm)	
+ 2	1793            -1.174992e+01  -1.523435e+01
+ 8	1812            -1.161878e+01  -1.521752e+01     Note: some buckling at apex.
+
+3. Fully incompressible with isochoric/deviatoric split and additional compressibility penalty
+ N	vol (mm3)	endo (mm)	epi (mm)	
+ 2	1806            -1.180106e+01  -1.520441e+01 
+ 8	1811            -1.179408e+01  -1.522975e+01     Note: slight pinch inward at apex.
+
+* Cardioid
+
+endo (mm)	epi (mm)	
+-12.6466   -15.5465
+
+Methods. Fully incompressible, quadratic displacement, linear pressure tetrahedral, hexahedral, pyramid and triangular prism finite elements.
+
+Visualization. Cardioid uses hex-dominant meshes with nodes on edges, faces and interior of the finite elements to interpolate quadratic displacement field. 
+However, all non-vertex nodes are dropped in output vtk files, and deformations are presented using linear elements.  
+Strain is computed at the center of each finite element (average coordinate of the vertex node). 
+Scalar fields Exx, Eyy, Ezz, … in vtk files are components of Green-Lagrangian strain tensor mapped on deformed geometry. 
+Eff is the strain in the fiber direction.
+
+Apex singularity. To avoid singularity of fiber directions at the apex, we set isotropic properties of the material for triangular prism elements at the apex, 
+ and constitutive law for isotropic material is the same as in the Problem 2 with passive ventricular mechanics.
+Therefore, fiber strain at the apex should be ignored in vtk files. 
+
+* John Hopkins
+
+Epi   -15.2207
+Endo -12.2896
+
+* Glasgow
+
+The apical region needs to be treated as a purely passive part (spans 4 elements from the apical point). 
+The attached LVmodel.png shows the region with contractility, the apical region is not included. 
+The isotropic material model from Problem 2 is used, but 10 times stiffer than that in Problem 2. 
+Due to the relative large passive region, the final deformed LV volume will be larger than the model without assuming passive apex. 
+
+Initial results:
+epi apical position   (0, 0, -15.22) mm
+endo apical position  (0, 0, -13.82) mm
+LV cavity volume:     1900 mm^3
+
+* Simula
+   n  volume    endo    epi
+   1  1929.50  -12.487  -15.818
+   2  1941.43  -12.672  -15.794
+   4  1945.15  -12.735  -15.789
+   8  1944.68  -12.734  -15.787
+  16  1944.67  -12.734  -15.783
+  32  1944.57  -12.736  -15.780
+
+
+
+
+

@@ -1,0 +1,7 @@
+See problem1's info.txt
+Meshes are
+2x8x8
+4x8x8
+8x8x8
+with only transmural refinements, as in problem 2
+

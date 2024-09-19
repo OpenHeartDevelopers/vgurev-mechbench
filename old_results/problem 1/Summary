@@ -1,0 +1,66 @@
+
+
+
+* Sander
+
+N x M x M elements, with N long axis. Cubic Lagrange finite elements with linear basis functions for hydrostatic pressure throughout.
+
+1. Fully incompressible
+ mesh		x		y		z	
+ 4x1x1	
+ 8x2x2	
+ 16x4x4	 
+
+2. Fully incompressible with isochoric/deviatoric split
+
+3. Fully incompressible with isochoric/deviatoric split and additional compressibility penalty
+
+ mesh		x		y		z	
+ 4x1x1	      9.188403        0.999877        4.140898
+ 8x2x2	      9.177234        0.999960        4.167651
+ 16x4x4	      9.174312        0.999964        4.174857    <- solution.vtk
+
+
+* Cardioid
+
+Methods. Fully incompressible, quadratic displacement, linear pressure tetrahedral, hexahedral, pyramid and triangular prism finite elements.
+
+Visualization. Cardioid uses hex-dominant meshes with nodes on edges, faces and interior of the finite elements to interpolate quadratic displacement field. However, all non-vertex nodes are dropped in output vtk files, and deformations are presented using linear elements.  
+Strain is computed at the center of each finite element (average coordinate of the vertex node). Scalar fields Exx, Eyy, Ezz, … in vtk files are components of Green-Lagrangian strain tensor mapped on deformed geometry. Eff is the strain in the fiber direction.
+
+
+* Simula (outdated results with old parameters)
+
+1. Fully incompressible, Quadratic displacement, Linear pressure, tetrahedral FE
+
+h       pos_x        pos_y        pos_z
+1.0     9.09179353   0.98210615   4.44323243
+0.5     9.08575791   0.9990009    4.4551117
+0.25    9.08304155   0.99919029   4.46191557
+0.125   9.08110386   0.99875195   4.46689487
+
+
+2. Nearly incompressible, quadratic elements, C_compr=100 kPa penalty
+h 	pos_x 		pos_y 		pos_z
+0.5 	9.17973         0.999974        4.22374
+0.25 	9.1191,         0.999849,       4.37661
+
+
+* John hopkins
+(9.18402 0.999987 4.15204)
+
+
+* Glasgow
+Problem 1: pressure loaded bar
+The beam is meshed with linear hex element, total number is 40x4x4. The pressure was linearly ramped to the maximum value in 1s,
+   and maintained for further 2s till the simulation reaches steady state. The results are post-processed after reaching steady state.
+ The deformed position for the furthest point is (9.229, 1, 4.05871) mm
+
+
+
+
+
+
+
+
+

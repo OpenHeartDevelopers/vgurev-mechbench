@@ -1,0 +1,18 @@
+Author(s)	: Sebastian Castro (1), Alessio Gizzi (2), Daniel E. Hurtado (1)
+
+Affiliation	: (1) Department of Structural and Geotechnical Engineering, Pontifica Universidad Católica de Chile, Vicuña Mackenna 4860, Macul, Santiago.
+(2) Department of Engineering, Nonlinear Physics and Mathematical Modeling Lab,University Campus Bio-Medico of Rome, via A. del Portillo 21, 00128 Rome, Italy
+
+Name of the code		  : FEAP
+Code availability/license	  : Licensed, Open Source FEM library
+
+DOI of references related to the software (2 max) : 
+
+(1) (no doi) FEAP-Finite Element Analysis Program,  Programming Manual. Taylor, R.L., University of California, Berkeley
+
+(2) doi:10.1016/0045-7825(91)90100-K
+
+Numerical methods (FE, basis type,incompressibility type) : Finite Element Method, 8-node brick-element basis, using a mixed formulation u-p-theta for incompressible materials. 
+
+
+

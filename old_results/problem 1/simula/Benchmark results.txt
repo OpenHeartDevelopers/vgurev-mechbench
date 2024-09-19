@@ -1,0 +1,118 @@
+Problem 1: pressure loaded bar
+========
+
+Formulation 1
+-----------
+  * Incompressible formulation with Lagrangian multiplier;
+  * Full weak formulation of problem reads:
+
+    Find (u, p) in V x Q s.t. :
+
+      inner(FS, Grad(v)) dx + pload * inner(cof(F)N, v) ds(BOTTOM)
+    - inner(p*cof(F), Grad(v)) dx + inner(q, J - 1) * dx = 0
+
+    for every (v, q) in V x Q.
+
+    We defined
+      V = { v \in H^1 : v|_LEFT = 0 },
+      Q = L^2
+      F = I + grad(u),
+      S = sym(dW/dE), 
+      J = det(F).
+
+  * FE discretisation on unstructured tetrahedral mesh, with
+      V_h = piecewise quadratic functions
+      Q_h = piecewise lineare functions
+
+  * Newton method, exact linearisation;
+  * Direct solver (UMFPACK) for tangent problem.
+
+Results formulation 1
+-------
+h       pos_x        pos_y        pos_z
+1.0     9.09179353   0.98210615   4.44323243
+0.5     9.08575791   0.9990009    4.4551117
+0.25    9.08304155   0.99919029   4.46191557
+0.125   9.08110386   0.99875195   4.46689487
+
+Formulation 2
+-----------
+ * Nearly incompressible formulation with Penalty term
+ * Full weak formulation of problem reads 
+
+   Find u in V s.t. :
+   inner(FS,Grad(v)+pload*inner(cof(F)N,v)ds(BOTTOM) = 0 
+   for all v in V
+
+   Definitions as above, except for 
+   S = sym(dW/dE) + sym(dW_vol/dE)
+   W_vol = C_compr*(J*ln(J)-J+1)
+
+  * FE discretization on structured hexahedral mesh,
+    with piecewise quadratic elements
+  
+Results formulation 2, C_compr = 100 kPa
+---------
+h 	pos_x		pos_y		pos_z
+0.5	9.17973           0.999974         4.22374
+0.25 9.1191,            0.999849,        4.37661
+
+=================================
+Problem 2: Inflated ellipsoid
+===================
+
+Formulation 1
+-----------
+  * Minimisation of total energy under incompressibility constraint:
+
+    min_{u \in V} [ W(E) dX + pload/3 inner(X+u, cof(F)*N) dS(ENDO) ]
+
+      s.t. det(F) = 1 and u|_{BASE} = 0.
+
+  * Deviatoric-volumetric decomposition:
+
+    E = 1/2 * ( J^{-2/3}F.T*F - 1 )
+
+  * Either 3d or axisymmetric 2d formulation:
+  
+    R, Z = X[0], X[1]
+    r, z = r(R, Z), z(R, Z)
+
+    F = [[ dr_dR, dr_dZ,   0 ],
+         [ dz_dR, dz_dZ,   0 ],
+         [     0,     0, r/R ]]
+
+  * FE discretisation on unstructured tetrahedral/triangular mesh, with
+      V_h = piecewise quadratic functions
+      Q_h = piecewise linear functions
+
+  * Isoparametric: (R, Z) \in V_h;
+  * Newton method, exact linearisation;
+  * Direct solver (UMFPACK) for tangent problem;
+  * Inner cavity volume at 10 kPa computed as follows:
+  
+    vol(\Omega_endo) = -1/3 inner(X+u, cof(F)*N) ds(ENDO)
+  
+  * Initial h_init = 4.0 mm (72 dofs for 2d, 2041 for 3d), then h = h_init/N.
+
+Results
+-------
+   N      vol (mm3)       endo (mm)        epi (mm)
+   1  10866.6368513  -31.7513665121  -33.0780303153
+   2  10756.9654888  -31.6664055878  -33.2899278782
+   4  10740.6728946  -31.6266414891  -33.2807951418
+   8  10735.152235   -31.6125974467  -33.2787076368
+  16  10734.1944902  -31.6119859697  -33.2785377071
+  32  10734.2746579  -31.6115828412  -33.2789491862
+  64  10734.3559643  -31.6116162159  -33.279034966
+
+
+Formulation 2
+------------
+Nearly incompressible penalty formulation, as given above, but 
+with kappa=1000kPa.
+
+Structured hexahedral mesh:
+DOFs  vol (mm3)  endo (mm)	epi (mm)
+1405  10599.6   -32.2407       -33.2499
+9945  10619.1	  -32.2023	-33.1977		   

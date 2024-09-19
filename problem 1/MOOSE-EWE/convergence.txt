@@ -1,0 +1,199 @@
+test 1
+
+ 0 Nonlinear |R| = 3.411808e-03
+ 1 Nonlinear |R| = 3.054697e-01
+ 2 Nonlinear |R| = 1.325085e-02
+ 3 Nonlinear |R| = 9.593465e-03
+ 4 Nonlinear |R| = 2.300048e-03
+ 5 Nonlinear |R| = 9.893336e-05
+ 6 Nonlinear |R| = 2.634621e-07
+ 7 Nonlinear |R| = 1.292866e-12
+
+test 2
+
+incremental loading with 10 steps, linearly applied
+
+Time Step  1, time = 0.1
+                dt = 0.1
+ 0 Nonlinear |R| = 3.818969e+01
+ 1 Nonlinear |R| = 1.245460e+01
+ 2 Nonlinear |R| = 3.582314e-01
+ 3 Nonlinear |R| = 3.344174e-04
+ 4 Nonlinear |R| = 9.655531e-10
+
+Time Step  2, time = 0.2
+                dt = 0.1
+ 0 Nonlinear |R| = 4.711521e+01
+ 1 Nonlinear |R| = 6.956371e+02
+ 2 Nonlinear |R| = 2.581180e+02
+ 3 Nonlinear |R| = 4.475083e+01
+ 4 Nonlinear |R| = 3.664514e+00
+ 5 Nonlinear |R| = 4.098695e-02
+ 6 Nonlinear |R| = 5.843759e-06
+ 7 Nonlinear |R| = 6.966923e-13
+
+Time Step  3, time = 0.3
+                dt = 0.1
+ 0 Nonlinear |R| = 6.140338e+01
+ 1 Nonlinear |R| = 1.087668e+03
+ 2 Nonlinear |R| = 3.481257e+02
+ 3 Nonlinear |R| = 5.753963e+01
+ 4 Nonlinear |R| = 3.225701e+00
+ 5 Nonlinear |R| = 1.408527e-02
+ 6 Nonlinear |R| = 3.054921e-07
+
+Time Step  4, time = 0.4
+                dt = 0.1
+ 0 Nonlinear |R| = 7.268401e+01
+ 1 Nonlinear |R| = 4.804297e+02
+ 2 Nonlinear |R| = 8.199819e+01
+ 3 Nonlinear |R| = 3.605451e+00
+ 4 Nonlinear |R| = 8.887503e-03
+ 5 Nonlinear |R| = 6.423334e-08
+
+Time Step  5, time = 0.5
+                dt = 0.1
+ 0 Nonlinear |R| = 8.058551e+01
+ 1 Nonlinear |R| = 3.176892e+02
+ 2 Nonlinear |R| = 3.032299e+01
+ 3 Nonlinear |R| = 3.591535e-01
+ 4 Nonlinear |R| = 5.814694e-05
+ 5 Nonlinear |R| = 9.952882e-12
+
+Time Step  6, time = 0.6
+                dt = 0.1
+ 0 Nonlinear |R| = 8.646354e+01
+ 1 Nonlinear |R| = 2.455387e+02
+ 2 Nonlinear |R| = 1.424559e+01
+ 3 Nonlinear |R| = 5.731889e-02
+ 4 Nonlinear |R| = 1.050066e-06
+ 5 Nonlinear |R| = 1.683476e-11
+
+Time Step  7, time = 0.7
+                dt = 0.1
+ 0 Nonlinear |R| = 9.107673e+01
+ 1 Nonlinear |R| = 2.039961e+02
+ 2 Nonlinear |R| = 7.758627e+00
+ 3 Nonlinear |R| = 1.281674e-02
+ 4 Nonlinear |R| = 3.938959e-08
+
+Time Step  8, time = 0.8
+                dt = 0.1
+ 0 Nonlinear |R| = 9.484140e+01
+ 1 Nonlinear |R| = 1.764440e+02
+ 2 Nonlinear |R| = 4.671572e+00
+ 3 Nonlinear |R| = 3.643187e-03
+ 4 Nonlinear |R| = 2.492590e-09
+
+Time Step  9, time = 0.9
+                dt = 0.1
+ 0 Nonlinear |R| = 9.800349e+01
+ 1 Nonlinear |R| = 1.565411e+02
+ 2 Nonlinear |R| = 3.023833e+00
+ 3 Nonlinear |R| = 1.235528e-03
+ 4 Nonlinear |R| = 2.412680e-10
+
+Time Step 10, time = 1
+                dt = 0.1
+ 0 Nonlinear |R| = 1.007184e+02
+ 1 Nonlinear |R| = 1.413322e+02
+ 2 Nonlinear |R| = 2.066921e+00
+ 3 Nonlinear |R| = 4.792720e-04
+ 4 Nonlinear |R| = 6.153060e-11
+
+test 3
+
+Incremental loading, 10 linear steps for boundary force and active stress
+
+Time Step  1, time = 0.1
+
+ 0 Nonlinear |R| = 6.866185e+01
+ 1 Nonlinear |R| = 1.215908e+01
+ 2 Nonlinear |R| = 1.845071e+00
+ 3 Nonlinear |R| = 1.178685e-01
+ 4 Nonlinear |R| = 1.092647e-03
+ 5 Nonlinear |R| = 1.077538e-07
+
+
+Time Step  2, time = 0.2
+
+ 0 Nonlinear |R| = 6.572046e+01
+ 1 Nonlinear |R| = 1.377277e+01
+ 2 Nonlinear |R| = 1.953048e+00
+ 3 Nonlinear |R| = 1.062710e-01
+ 4 Nonlinear |R| = 5.800679e-04
+ 5 Nonlinear |R| = 2.290419e-08
+
+
+Time Step  3, time = 0.3
+
+ 0 Nonlinear |R| = 6.393128e+01
+ 1 Nonlinear |R| = 9.293143e+00
+ 2 Nonlinear |R| = 8.046964e-01
+ 3 Nonlinear |R| = 2.030679e-02
+ 4 Nonlinear |R| = 1.796599e-05
+ 5 Nonlinear |R| = 6.402489e-10
+
+
+Time Step  4, time = 0.4
+
+ 0 Nonlinear |R| = 6.255636e+01
+ 1 Nonlinear |R| = 6.849097e+00
+ 2 Nonlinear |R| = 3.061563e-01
+ 3 Nonlinear |R| = 1.927623e-03
+ 4 Nonlinear |R| = 1.017386e-07
+
+
+Time Step  5, time = 0.5
+
+ 0 Nonlinear |R| = 6.144628e+01
+ 1 Nonlinear |R| = 5.421677e+00
+ 2 Nonlinear |R| = 1.385482e-01
+ 3 Nonlinear |R| = 2.548836e-04
+ 4 Nonlinear |R| = 1.850682e-09
+
+
+Time Step  6, time = 0.6
+
+ 0 Nonlinear |R| = 6.053353e+01
+ 1 Nonlinear |R| = 4.481557e+00
+ 2 Nonlinear |R| = 7.432902e-02
+ 3 Nonlinear |R| = 4.891793e-05
+ 4 Nonlinear |R| = 1.689923e-09
+
+
+Time Step  7, time = 0.7
+
+ 0 Nonlinear |R| = 5.977293e+01
+ 1 Nonlinear |R| = 3.807185e+00
+ 2 Nonlinear |R| = 4.487817e-02
+ 3 Nonlinear |R| = 1.260835e-05
+ 4 Nonlinear |R| = 2.472153e-09
+
+
+Time Step  8, time = 0.8
+
+ 0 Nonlinear |R| = 5.913112e+01
+ 1 Nonlinear |R| = 3.297884e+00
+ 2 Nonlinear |R| = 2.929950e-02
+ 3 Nonlinear |R| = 4.076610e-06
+ 4 Nonlinear |R| = 2.163686e-09
+
+
+Time Step  9, time = 0.9
+
+ 0 Nonlinear |R| = 5.858298e+01
+ 1 Nonlinear |R| = 2.900091e+00
+ 2 Nonlinear |R| = 2.018594e-02
+ 3 Nonlinear |R| = 1.561472e-06
+ 4 Nonlinear |R| = 2.798601e-09
+
+
+Time Step 10, time = 1
+
+ 0 Nonlinear |R| = 5.810952e+01
+ 1 Nonlinear |R| = 2.581674e+00
+ 2 Nonlinear |R| = 1.446709e-02
+ 3 Nonlinear |R| = 6.778349e-07
+ 4 Nonlinear |R| = 3.302735e-09
+
